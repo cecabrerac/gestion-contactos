@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <title>Gestión de Contactos</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1>Gestión de Contactos</h1>
+
+        <div id="contact-form">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <input type="text" id="telefono" placeholder="Teléfono" required>
+            <input type="email" id="email" placeholder="Correo electrónico" required>
+            <button onclick="agregarContacto()">Agregar Contacto</button>
+        </div>
+
+        <h2>Lista de Contactos</h2>
+        <ul id="contact-list"></ul>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>

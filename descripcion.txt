@@ -1,0 +1,29 @@
+Proyecto Grupal: Desarrollo de una Aplicación Simple de Gestión de Contactos
+
+Pasos del Proyecto:
+
+    Desarrollo de Clases y Objetos:
+        Definir Clases: Crea clases para representar los elementos del sistema de gestión de contactos, como Contacto (con atributos como nombre, teléfono, email).
+        Atributos y Métodos: Define atributos y métodos para la clase Contacto, asegurándote de incluir constructores, getters y setters.
+    Uso de Colecciones:
+        Gestión de Datos: Utiliza una colección como ArrayList para gestionar la lista de contactos.
+        Métodos de Gestión: Implementa métodos para añadir, eliminar y buscar contactos dentro de la lista.
+
+    Validación de Datos:
+        Validación Básica: Implementa validación básica en los métodos de la clase Contacto para asegurar que los datos ingresados (como email y número de teléfono) son válidos.
+
+    Pruebas y Documentación:
+        Pruebas Simples: Realiza pruebas básicas para asegurar que los métodos de la clase Contacto funcionan correctamente.
+        Documentación: Documenta el diseño del sistema, cómo compilar y ejecutar la aplicación, y cualquier otra información relevante.
+
+Entrega del Proyecto:
+
+    Código Fuente: Suban el código fuente de la aplicación a la plataforma Moodle.
+    Documentación: Incluyan una breve documentación que describa el diseño del sistema, instrucciones de compilación y ejecución, y cualquier otra información relevante.
+    Presentación: Preparar una presentación de 5-10 minutos para mostrar el proyecto al resto de la clase, destacando las características principales y soluciones implementadas.
+
+*****************************************
+
+Carlos Eduardo Cabrera Córdoba
+Programación Integrador Cohorte 2
+Talento Tech
