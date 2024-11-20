@@ -18,6 +18,7 @@ async function agregar() {
   const response = await fetch("./htmlFiles/agregar.html");
   const data = await response.text();
   contenido.innerHTML = data;
+  obtenerContactos();
 }
 
 async function actualizar() {

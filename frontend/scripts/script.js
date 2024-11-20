@@ -3,15 +3,26 @@ function obtenerContactos() {
   fetch("http://localhost:3000/api/contactos")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       const contactList = document.getElementById("contact-list");
       contactList.innerHTML = ""; // Limpiar la lista
 
       // Mostrar cada contacto en la lista
       data.forEach((contacto) => {
-        const li = document.createElement("li");
-        li.textContent = `${contacto.nombre} - ${contacto.telefono} - ${contacto.email}`;
-        contactList.appendChild(li);
+        const tr = document.createElement("tr");
+
+        const tdNombre = document.createElement("td");
+        tdNombre.textContent = contacto.nombre;
+        tr.appendChild(tdNombre);
+
+        const tdTelefono = document.createElement("td");
+        tdTelefono.textContent = contacto.telefono;
+        tr.appendChild(tdTelefono);
+
+        const tdEmail = document.createElement("td");
+        tdEmail.textContent = contacto.email;
+        tr.appendChild(tdEmail);
+
+        contactList.appendChild(tr);
       });
     })
     .catch((error) => console.error("Error al obtener contactos:", error));
@@ -44,6 +55,3 @@ function agregarContacto() {
     })
     .catch((error) => console.error("Error al agregar contacto:", error));
 }
-
-// Cargar los contactos al inicio
-// window.onload = obtenerContactos;
