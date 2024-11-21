@@ -160,7 +160,7 @@ function actualizarEsteContacto() {
       alert(data.message);
       console.log("Ahora necesitamos renderizar todos los contactos...");
       if (data.message === "Contacto actualizado exitosamente") {
-        actualizar();
+        uploadHtml("actualizar");
       }
     });
 }
@@ -241,7 +241,7 @@ function borrarContacto(id) {
   })
     .then((response) => response.json())
     .then((data) => {
-      borrar();
+      uploadHtml("borrar");
     })
     .catch((error) => {
       console.error("Error al borrar el contacto:", error);
