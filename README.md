@@ -8,7 +8,9 @@
 
 Aplicación de gestión de contactos con MariaDB, Nodejs para el backend y HTML5, CSS3 y JavaScript para el frontend.
 
-Descripción del proyecto: [Descripción](#description)
+El proyecto consiste en una aplicación de gestión de contactos que permite a los usuarios agregar, editar y eliminar contactos en una base de datos. Se utiliza MariaDB como base de datos y Node.js como servidor.
+
+Ver video de la aplicación en ejecución: [Video](https://youtu.be/-5zvIgmC5cU)
 
 ## Pasos para ejecutar la aplicación de manera local:
 
@@ -110,39 +112,5 @@ Siguiendo estos pasos, otra persona debería poder ejecutar la aplicación de ge
 
 <br/>
 <br/>
-
-<a name="description" id="description"></a>
-
-# Descripción del Proyecto
-
-El proyecto consiste en una aplicación de gestión de contactos que permite a los usuarios agregar, eliminar y buscar contactos en una base de datos. Se utilizará MariaDB como base de datos y Node.js como servidor.
-
-## Pasos del Proyecto:
-
-#### Desarrollo de Clases y Objetos:
-
--Definir Clases: Crea clases para representar los elementos del sistema de gestión de contactos, como Contacto (con atributos como nombre, teléfono, email).
-
--Atributos y Métodos: Define atributos y métodos para la clase Contacto, asegurándote de incluir constructores, getters y setters.
-
-#### Uso de Colecciones:
-
-- Gestión de Datos: Utiliza una colección como ArrayList para gestionar la lista de contactos.
-- Métodos de Gestión: Implementa métodos para añadir, eliminar y buscar contactos dentro de la lista.
-
-#### Validación de Datos:
-
-- Validación Básica: Implementa validación básica en los métodos de la clase Contacto para asegurar que los datos ingresados (como email y número de teléfono) son válidos.
-
-#### Pruebas y Documentación:
-
-- Pruebas Simples: Realiza pruebas básicas para asegurar que los métodos de la clase Contacto funcionan correctamente.
-- Documentación: Documenta el diseño del sistema, cómo compilar y ejecutar la aplicación, y cualquier otra información relevante.
-
-#### Entrega del Proyecto:
-
-- Código Fuente: Suban el código fuente de la aplicación a la plataforma Moodle.
-- Documentación: Incluyan una breve documentación que describa el diseño del sistema, instrucciones de compilación y ejecución, y cualquier otra información relevante.
-- Presentación: Preparar una presentación de 5-10 minutos para mostrar el proyecto al resto de la clase, destacando las características principales y soluciones implementadas.
 
 [Subir](#top)
