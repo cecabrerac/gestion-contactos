@@ -34,9 +34,12 @@ Descripción del proyecto: [Descripción](#description)
 
 3. Instalar Dependencias del Proyecto:
 
-- Desde el directorio del proyecto clonado, ejecuta el siguiente comando para instalar las dependencias necesarias:
+- Dentro del folder [ backend ] del directorio del proyecto clonado, ejecuta el comando para instalar las dependencias necesarias:
 
+  ```
+  cd backend
   npm install
+  ```
 
 4. Configurar la Base de Datos MariaDB:
 
