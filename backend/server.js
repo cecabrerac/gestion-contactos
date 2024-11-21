@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Rutas
 app.get("/api/contactos", contactoController.obtenerContactos);
 app.post("/api/contactos", contactoController.agregarContacto);
+app.put("/api/contactos/:id", contactoController.actualizarContacto);
 
 // Iniciar servidor
 app.listen(port, () => {
