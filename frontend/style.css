@@ -10,9 +10,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
   width: 100%;
   height: 100%;
+  padding: 5px;
+  margin: 0 5px;
+  overflow: hidden;
 }
 
 .title {
@@ -39,17 +42,24 @@ body {
 
 .contenido {
   background-color: cornflowerblue;
-  height: 100%;
   width: 100%;
+  height: 100%;
   display: flex;
-  overflow: auto;
-  margin-bottom: 40px;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+  overflow: hidden;
+  /* margin-bottom: 40px; */
+  padding: 5px;
+  font-size: small;
 }
 
 .footer {
   position: fixed;
-  bottom: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0 10px;
   width: 100%;
   background: #333;
   color: white;
@@ -74,7 +84,7 @@ h1 {
 input {
   padding: 8px;
   margin: 5px;
-  width: 200px;
+  width: 130px;
 }
 
 .inicio {
@@ -101,9 +111,12 @@ h4 {
 
 .tabla-mostrar th,
 .tabla-mostrar td {
-  padding: 8px;
+  padding: 2px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  word-wrap: break-word; /* Ensures long words break and wrap */
+  word-break: break-all; /* Forces wrapping for very long words */
+  white-space: normal; /* Allows text to wrap to the next line */
 }
 
 .tabla-mostrar tr:hover {
@@ -135,7 +148,7 @@ h4 {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
   margin-bottom: 10px;
 }
 
@@ -144,11 +157,12 @@ h4 {
 }
 
 .input input {
-  width: 300px;
+  width: 280px;
 }
 
 button {
   border-radius: 5px;
   border: none;
   padding: 5px;
+  white-space: nowrap;
 }
