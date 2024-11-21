@@ -99,8 +99,6 @@ function actualizarContactos() {
 
 // Actualizar un contacto
 async function actualizarContacto(id, nombre, telefono, email) {
-  console.log(id, nombre, telefono, email);
-
   const contenido = document.getElementById("contenido");
   const response = await fetch("./htmlFiles/actualizarContacto.html");
   const data = await response.text();
@@ -146,7 +144,6 @@ function actualizarEsteContacto() {
   }
 
   const data = { nombre, telefono, email };
-  console.log(id, nombre, telefono, email);
 
   fetch(`http://localhost:3000/api/contactos/${id}`, {
     method: "PUT",
@@ -158,7 +155,6 @@ function actualizarEsteContacto() {
     .then((response) => response.json())
     .then((data) => {
       alert(data.message);
-      console.log("Ahora necesitamos renderizar todos los contactos...");
       if (data.message === "Contacto actualizado exitosamente") {
         uploadHtml("actualizar");
       }
