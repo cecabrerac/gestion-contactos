@@ -127,6 +127,7 @@ h4 {
 .lista-contactos {
   overflow-y: auto;
   margin-bottom: 10px;
+  padding: 5px;
 }
 
 .input {
