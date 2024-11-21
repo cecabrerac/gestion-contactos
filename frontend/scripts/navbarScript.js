@@ -34,4 +34,5 @@ async function borrar() {
   const response = await fetch("./htmlFiles/borrar.html");
   const data = await response.text();
   contenido.innerHTML = data;
+  borrarContactos();
 }

@@ -184,3 +184,66 @@ function validarEmail(email) {
   const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
   return regex.test(email);
 }
+
+// Borrar contactos
+
+function borrarContactos() {
+  const listaContactos = document.getElementById("contact-list");
+  listaContactos.innerHTML = "";
+
+  fetch("http://localhost:3000/api/contactos")
+    .then((response) => response.json())
+    .then((data) => {
+      const contactList = document.getElementById("contact-list");
+      contactList.innerHTML = ""; // Limpiar la lista
+
+      // Mostrar cada contacto en la lista
+      data.forEach((contacto) => {
+        const tr = document.createElement("tr");
+
+        const tdNombre = document.createElement("td");
+        tdNombre.textContent = contacto.nombre;
+        tr.appendChild(tdNombre);
+
+        const tdTelefono = document.createElement("td");
+        tdTelefono.textContent = contacto.telefono;
+        tr.appendChild(tdTelefono);
+
+        const tdEmail = document.createElement("td");
+        tdEmail.textContent = contacto.email;
+        tr.appendChild(tdEmail);
+
+        const tdButton = document.createElement("td");
+        tdButton.innerHTML = "<button>Borrar</button>";
+        tdButton.addEventListener("click", () => {
+          borrarContacto(
+            contacto.id,
+            contacto.nombre,
+            contacto.telefono,
+            contacto.email
+          );
+        });
+        tr.appendChild(tdButton);
+
+        contactList.appendChild(tr);
+      });
+    })
+    .catch((error) => console.error("Error al obtener contactos:", error));
+}
+
+// Borrar un contacto
+function borrarContacto(id) {
+  fetch("http://localhost:3000/api/contactos/" + id, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      borrar();
+    })
+    .catch((error) => {
+      console.error("Error al borrar el contacto:", error);
+    });
+}

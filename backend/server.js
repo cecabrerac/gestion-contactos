@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/api/contactos", contactoController.obtenerContactos);
 app.post("/api/contactos", contactoController.agregarContacto);
 app.put("/api/contactos/:id", contactoController.actualizarContacto);
+app.delete("/api/contactos/:id", contactoController.borrarContacto);
 
 // Iniciar servidor
 app.listen(port, () => {

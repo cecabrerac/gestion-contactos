@@ -106,9 +106,23 @@ const agregarContacto = (req, res) => {
   }
 };
 
+// Método para borrar un contacto
+const borrarContacto = async (req, res) => {
+  const { id } = req.params;
+  query = "DELETE FROM contactos WHERE id = ?";
+  db.query(query, [id], (err, result) => {
+    if (err) {
+      res.status(400).send({ message: err.message });
+    } else {
+      res.status(200).send({ message: "Contacto borrado exitosamente" });
+    }
+  });
+};
+
 module.exports = {
   obtenerContactos,
   obtenerContacto,
   actualizarContacto,
   agregarContacto,
+  borrarContacto,
 };
