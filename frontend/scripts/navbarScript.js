@@ -26,6 +26,7 @@ async function actualizar() {
   const response = await fetch("./htmlFiles/actualizar.html");
   const data = await response.text();
   contenido.innerHTML = data;
+  actualizarContactos();
 }
 
 async function borrar() {
