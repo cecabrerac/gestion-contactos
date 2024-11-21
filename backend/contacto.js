@@ -7,6 +7,12 @@ class Contacto {
     this.email = email;
   }
 
+  // Método para validar los datos del nombre
+  static validarNombre(nombre) {
+    const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+    return regex.test(nombre);
+  }
+
   // Método para validar los datos del contacto
   static validarTelefono(telefono) {
     const regex = /^[0-9]{9,15}$/;
@@ -22,6 +28,11 @@ class Contacto {
   validarDatos() {
     if (!this.nombre || !this.telefono || !this.email) {
       throw new Error("Todos los campos son requeridos");
+    }
+    if (!Contacto.validarNombre(this.nombre)) {
+      throw new Error(
+        "Nombre inválido. Solo se permiten letras y caracteres especiales como tildes y ñ."
+      );
     }
     if (!Contacto.validarTelefono(this.telefono)) {
       throw new Error("Número de teléfono inválido");

@@ -118,13 +118,30 @@ async function actualizarContacto(id, nombre, telefono, email) {
 
 function actualizarEsteContacto() {
   const contenido = document.getElementById("contenido");
+
   const id = Number(document.getElementById("id").value);
   const nombre = document.getElementById("nombre").value;
   const telefono = document.getElementById("telefono").value;
   const email = document.getElementById("email").value;
 
+  // Validaciones del lado del frontend
   if (!nombre || !telefono || !email) {
     alert("Todos los campos son requeridos");
+    return;
+  }
+
+  if (!validarNombre(nombre)) {
+    alert(
+      "Nombre inválido. Solo se permiten letras y caracteres especiales como tildes y ñ."
+    );
+    return;
+  }
+  if (!validarTelefono(telefono)) {
+    alert("Número de teléfono inválido.");
+    return;
+  }
+  if (!validarEmail(email)) {
+    alert("Correo electrónico inválido.");
     return;
   }
 
@@ -139,6 +156,31 @@ function actualizarEsteContacto() {
     body: JSON.stringify(data),
   })
     .then((response) => response.json())
-    .then((data) => alert(data.message));
-  actualizarContactos();
+    .then((data) => {
+      alert(data.message);
+      console.log("Ahora necesitamos renderizar todos los contactos...");
+      if (data.message === "Contacto actualizado exitosamente") {
+        actualizar();
+      }
+    });
+}
+
+//FUNCIONES DE VALIDACIÓN DEL LADO DEL FRONTEND
+
+// Método para validar los datos del nombre
+function validarNombre(nombre) {
+  const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+  return regex.test(nombre);
+}
+
+// Método para validar los datos del telefono
+function validarTelefono(telefono) {
+  const regex = /^[0-9]{9,15}$/;
+  return regex.test(telefono);
+}
+
+// Método para validar los datos del correo
+function validarEmail(email) {
+  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  return regex.test(email);
 }
