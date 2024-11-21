@@ -31,6 +31,51 @@ const obtenerContactos = (req, res) => {
   });
 };
 
+// Método para obtener un contacto por su id
+const obtenerContacto = (req, res) => {
+  const { id } = req.params;
+
+  db.query("SELECT * FROM contactos WHERE id = ?", [id], (err, result) => {
+    if (err) {
+      res.status(500).send({ message: "Error al obtener contacto" });
+      return;
+    }
+    res.json(result);
+  });
+};
+
+// Metodo para actualizar un contacto
+const actualizarContacto = (req, res) => {
+  const { id } = req.params;
+  const { nombre, telefono, email } = req.body;
+  console.log(id, nombre, telefono, email);
+
+  try {
+    // Crear un nuevo objeto Contacto
+    const contacto = new Contacto(nombre, telefono, email);
+
+    // Validar los datos
+    contacto.validarDatos();
+
+    // Actualizar el contacto en la base de datos
+    const query =
+      "UPDATE contactos SET nombre = ?, telefono = ?, email = ? WHERE id = ?";
+    db.query(
+      query,
+      [contacto.nombre, contacto.telefono, contacto.email, id],
+      (err, result) => {
+        if (err) {
+          res.status(500).send({ message: "Error al actualizar contacto" });
+          return;
+        }
+        res.status(200).send({ message: "Contacto actualizado exitosamente" });
+      }
+    );
+  } catch (error) {
+    res.status(400).send({ message: error.message });
+  }
+};
+
 // Método para agregar un nuevo contacto
 const agregarContacto = (req, res) => {
   const { nombre, telefono, email } = req.body;
@@ -61,4 +106,9 @@ const agregarContacto = (req, res) => {
   }
 };
 
-module.exports = { obtenerContactos, agregarContacto };
+module.exports = {
+  obtenerContactos,
+  obtenerContacto,
+  actualizarContacto,
+  agregarContacto,
+};
