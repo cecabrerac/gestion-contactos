@@ -129,3 +129,20 @@ h4 {
   overflow-y: auto;
   margin-bottom: 10px;
 }
+
+.input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.input label {
+  width: 100px;
+}
+
+.input input {
+  width: 300px;
+}
